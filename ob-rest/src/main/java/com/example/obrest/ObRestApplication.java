@@ -1,5 +1,8 @@
 package com.example.obrest;
 
+import com.example.obrest.controller.BookController;
+import com.example.obrest.entities.Book;
+import com.example.obrest.repository.BookRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +16,6 @@ public class ObRestApplication {
 
 		ApplicationContext context= SpringApplication.run(ObRestApplication.class, args);
 		BookRepository repository= context.getBean(BookRepository.class);
-
 
 		//CRUD
 		//Crear Libro
@@ -30,8 +32,8 @@ public class ObRestApplication {
 		System.out.println("num de libro en base de datos: "+repository.findAll());
 
 		//Borrar un libroo
-		repository.deleteById(1L);
-		System.out.println("num de libro en base de datos: "+repository.findAll().size());
+		//repository.deleteById(1L);
+		//System.out.println("num de libro en base de datos: "+repository.findAll().size());
 
 
 	}
